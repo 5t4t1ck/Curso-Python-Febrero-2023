@@ -1,6 +1,5 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+from .models import Course
 
-def index(request):
-    return HttpResponse("Hola Mundo desde Abacom!!!")
-
+def homepage(request):
+    return render(request, "primeraApp/inicio.html", {"courses":Course.objects.all})
